@@ -1,0 +1,50 @@
+/* Base styling for logo container */
+.logo-container {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: center; /* Center the content horizontally */
+  padding: 10px; /* Add padding around the logo */
+  background-color: #ffffff; /* White background for contrast */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a lifting effect */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Logo image styling */
+.logo-container img {
+  width: 50px; /* Default width */
+  height: 50px; /* Default height */
+  object-fit: contain; /* Ensure the image scales correctly */
+  transition: transform 0.3s; /* Smooth scaling on hover */
+}
+
+/* Hover effect for logo container */
+.logo-container:hover {
+  background-color: #f8f9fa; /* Light background color on hover */
+  transform: scale(1.05); /* Slightly enlarge the logo container */
+}
+
+/* Responsive styles for logo container */
+@media (max-width: 768px) {
+  .logo-container {
+    padding: 8px; /* Adjust padding for tablets */
+  }
+
+  .logo-container img {
+    width: 40px; /* Adjust logo size for tablets */
+    height: 40px; /* Adjust logo size for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-container {
+    padding: 6px; /* Further adjust padding for small screens */
+  }
+
+  .logo-container img {
+    width: 30px; /* Further adjust logo size for small screens */
+    height: 30px; /* Further adjust logo size for small screens */
+  }
+}
+
+

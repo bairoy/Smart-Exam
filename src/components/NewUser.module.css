@@ -1,0 +1,80 @@
+/* NewUser.module.css */
+.outsideDiv {
+  position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+ 
+}
+
+.newUser {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally */
+  justify-content: center; /* Center children vertically */
+  width: 100%; /* Full width of the viewport */
+  max-width: 400px; /* Maximum width for the form */
+  padding: 20px; /* Add padding inside the form */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  background-color: #ffffff; /* White background for the form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a lifting effect */
+  box-sizing: border-box; /* Ensure padding is included in height/width calculations */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+/* Form elements styling */
+.newUser input[type="email"],
+.newUser input[type="password"],
+.newUser button {
+  width: 100%; /* Full width of the form */
+  padding: 10px; /* Padding inside inputs and button */
+  margin: 10px 0; /* Margin between inputs and button */
+  border: 1px solid #ced4da; /* Border color for inputs */
+  border-radius: 4px; /* Rounded corners for inputs and button */
+  font-size: 16px; /* Font size for readability */
+}
+
+/* Button styling */
+.newUser button {
+  background-color: #007bff; /* Primary button color */
+  color: #ffffff; /* Text color for button */
+  border: none; /* Remove border for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Button hover effect */
+.newUser button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .newUser {
+    max-width: 90%; /* Adjust width for tablets */
+    padding: 15px; /* Adjust padding for tablets */
+  }
+
+  .newUser input[type="email"],
+  .newUser input[type="password"],
+  .newUser button {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .newUser {
+    max-width: 95%; /* Further adjust width for mobile screens */
+    padding: 10px; /* Further adjust padding for mobile screens */
+  }
+
+  .newUser input[type="email"],
+  .newUser input[type="password"],
+  .newUser button {
+    font-size: 12px; /* Further adjust font size for mobile screens */
+    padding: 6px; /* Further adjust padding for mobile screens */
+  }
+}
+

@@ -1,0 +1,48 @@
+/* Base link styles */
+.anchor {
+  display: inline-block; /* Allows for padding and margins */
+  margin: 0 15px; /* Spacing between links */
+  text-decoration: none; /* Remove underline from links */
+  color: #007bff; /* Primary link color */
+  font-weight: 500; /* Medium weight for better readability */
+  padding: 8px 12px; /* Padding inside the link */
+  border-radius: 4px; /* Rounded corners */
+  transition: color 0.3s, background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Hover state */
+.anchor:hover {
+  text-decoration: none; /* No underline on hover to match modern design */
+  color: #ffffff; /* Text color on hover */
+  background-color: #007bff; /* Background color on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active state (when the link is being clicked) */
+.anchor:active {
+  color: #004080; /* Darker shade of blue for active state */
+  background-color: #e2e6ea; /* Light background color for active state */
+}
+
+/* Focus state for accessibility */
+.anchor:focus {
+  outline: 3px solid #0056b3; /* Custom focus outline for better accessibility */
+  outline-offset: 2px; /* Space between the outline and the text */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .anchor {
+    margin: 0 10px; /* Adjust spacing for tablets and smaller screens */
+    padding: 6px 10px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Adjust font size for better readability */
+  }
+}
+
+@media (max-width: 480px) {
+  .anchor {
+    margin: 0 8px; /* Further adjust spacing for very small screens */
+    padding: 5px 8px; /* Further adjust padding */
+    font-size: 12px; /* Further adjust font size */
+  }
+}

@@ -1,0 +1,81 @@
+/* Base header styling */
+.header {
+  display: flex;
+  justify-content: space-between; /* Space between logo and navigation */
+  align-items: center; /* Center items vertically */
+  width: 100%; /* Full width of the viewport */
+  padding: 10px 20px; /* Add padding inside the header */
+  background-color: #213040; /* Dark background color */
+  position: fixed; /* Fix the header to the top */
+  top: 0; /* Align it to the top of the page */
+  left: 0; /* Align it to the left of the viewport */
+  z-index: 1000; /* Ensure it stays on top of other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a lifting effect */
+  color: #ffffff; /* White text color for better contrast */
+}
+
+/* Header logo styles */
+.header .logo {
+  font-size: 24px; /* Larger font size for the logo */
+  font-weight: bold; /* Bold text for the logo */
+  color: #ffffff; /* White text color */
+  text-transform: uppercase; /* Uppercase text for emphasis */
+  text-decoration: none; /* Remove underline if logo is a link */
+}
+
+/* Navigation styles */
+.header .nav {
+  display: flex; /* Horizontal layout for navigation items */
+  gap: 20px; /* Space between navigation items */
+}
+
+/* Navigation link styles */
+.header .nav a {
+  color: #ffffff; /* White text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Font size for navigation links */
+  transition: color 0.3s, border-bottom 0.3s; /* Smooth transitions */
+  padding: 8px 12px; /* Padding for better click area */
+  border-radius: 4px; /* Rounded corners */
+}
+
+/* Hover effect for navigation links */
+.header .nav a:hover {
+  color: #f0f0f0; /* Slightly lighter color on hover */
+  border-bottom: 2px solid #ffffff; /* Underline effect on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .header {
+    padding: 10px 15px; /* Adjust padding for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+
+  .header .nav {
+    flex-direction: column; /* Stack navigation items vertically */
+    gap: 10px; /* Space between navigation items */
+    margin-top: 10px; /* Space between logo and navigation */
+  }
+
+  .header .nav a {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .header .logo {
+    font-size: 20px; /* Smaller font size for the logo */
+  }
+
+  .header .nav a {
+    font-size: 12px; /* Further adjust font size for very small screens */
+    padding: 6px 10px; /* Further adjust padding */
+  }
+}

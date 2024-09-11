@@ -1,0 +1,44 @@
+/* Base styles for the button */
+.btnclass {
+  display: inline-block; /* Ensure button takes only as much width as needed */
+  border-radius: 5px; /* Rounded corners */
+  text-align: center; /* Center text inside the button */
+  background-color: #f5deb3; /* Wheat color (light beige) */
+  color: #007bff; /* Blue text color */
+  margin: 10px; /* Spacing around the button */
+  padding: 10px 20px; /* Padding inside the button (vertical | horizontal) */
+  font-size: 16px; /* Font size */
+  font-weight: 600; /* Slightly bolder text */
+  text-decoration: none; /* Remove underline if button is styled as a link */
+  border: 1px solid #ccc; /* Light border around the button */
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+/* Hover effect */
+.btnclass:hover {
+  color: #dc3545; /* Red text color on hover */
+  background-color: #e2b897; /* Slightly darker wheat color on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a lifting effect */
+}
+
+/* Focus effect for accessibility */
+.btnclass:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Custom focus outline */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .btnclass {
+    padding: 8px 16px; /* Adjust padding on smaller screens */
+    font-size: 14px; /* Adjust font size on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .btnclass {
+    padding: 6px 12px; /* Further adjust padding for very small screens */
+    font-size: 12px; /* Further adjust font size */
+    margin: 5px; /* Reduce margin for very small screens */
+  }
+}
