@@ -28,7 +28,11 @@ function Login() {
       });
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
-        navigate("/dashboard");
+        if (response.data.role === "examinee") {
+          navigate("/dashboard");
+        } else {
+          navigate("/proctordashboard");
+        }
       } else {
         alert("Invalid email or password");
       }
@@ -58,8 +62,11 @@ function Login() {
           onChange={handleChange}
           required
         />
-        <br />
-        <button type="submit">Login</button> {/* Add a submit button */}
+        <center>
+          <button type="submit" className={style.btnclass}>
+            Login
+          </button>{" "}
+        </center>
       </form>
     </div>
   );

@@ -14,7 +14,7 @@ function Header() {
   const navigate = useNavigate();
 
   const buttons = [
-    { btnName: "Sign Up", btnLink: () => navigate("/signup") },
+    { btnName: "Sign Up", btnLink: () => navigate("/rolelayout") },
     { btnName: "Sign In", btnLink: () => navigate("/login") },
   ];
 

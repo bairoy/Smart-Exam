@@ -1,80 +1,141 @@
-/* NewUser.module.css */
+/* Ensure the form container is centered horizontally and positioned below the header */
 .outsideDiv {
-  position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
- 
-}
-
-.newUser {
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center children horizontally */
-  justify-content: center; /* Center children vertically */
-  width: 100%; /* Full width of the viewport */
-  max-width: 400px; /* Maximum width for the form */
-  padding: 20px; /* Add padding inside the form */
-  border-radius: 8px; /* Rounded corners for a modern look */
-  background-color: #ffffff; /* White background for the form */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a lifting effect */
-  box-sizing: border-box; /* Ensure padding is included in height/width calculations */
-  margin: 0 auto; /* Center the form horizontally */
+  flex-direction: column;
+  align-items: center; /* Center the form horizontally */
+  padding: 20px;
+  margin-top: 80px; /* Adjust margin based on header height */
+  width: 100%;
+  max-width: 600px; /* Constrain width to keep it readable */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
 }
 
-/* Form elements styling */
-.newUser input[type="email"],
-.newUser input[type="password"],
-.newUser button {
-  width: 100%; /* Full width of the form */
-  padding: 10px; /* Padding inside inputs and button */
-  margin: 10px 0; /* Margin between inputs and button */
-  border: 1px solid #ced4da; /* Border color for inputs */
-  border-radius: 4px; /* Rounded corners for inputs and button */
-  font-size: 16px; /* Font size for readability */
+/* Styling for the form containers */
+.newUser, .otpForm {
+  width: 100%;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: #f8f9fa; /* Light background for better readability */
+  border: 1px solid #dee2e6; /* Subtle border for definition */
 }
 
-/* Button styling */
-.newUser button {
+/* Form labels */
+.newUser label, .otpForm label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600; /* Slightly bolder for emphasis */
+  color: #343a40; /* Darker text color */
+  font-size: 16px; /* Larger font size for better readability */
+}
+
+/* Form inputs */
+.newUser input, .otpForm input {
+  width: calc(100% - 22px); /* Ensure input fits within the container */
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da; /* Light border */
+  border-radius: 6px; /* Rounded corners */
+  font-size: 16px; /* Consistent font size */
+  transition: border-color 0.3s; /* Smooth transition for focus effect */
+}
+
+/* Input focus effect */
+.newUser input:focus, .otpForm input:focus {
+  border-color: #007bff; /* Highlight border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Button styles */
+.btnclass {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 6px;
   background-color: #007bff; /* Primary button color */
-  color: #ffffff; /* Text color for button */
-  border: none; /* Remove border for button */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  color: #ffffff;
+  font-size: 18px; /* Larger font size */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 /* Button hover effect */
-.newUser button:hover {
+.btnclass:hover {
   background-color: #0056b3; /* Darker shade on hover */
   transform: translateY(-2px); /* Slight lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Disabled button state */
+.btnclass:disabled {
+  background-color: #cccccc; /* Disabled state */
+  cursor: not-allowed;
+}
+
+/* Error message styling */
+.error {
+  color: #ff4d4d; /* Red color for errors */
+  margin-top: 8px; /* Space above the error message */
+  font-size: 14px; /* Font size for error messages */
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
-  .newUser {
-    max-width: 90%; /* Adjust width for tablets */
-    padding: 15px; /* Adjust padding for tablets */
+@media (max-width: 1024px) {
+  .outsideDiv {
+    padding: 15px;
   }
 
-  .newUser input[type="email"],
-  .newUser input[type="password"],
-  .newUser button {
+  .newUser, .otpForm {
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .outsideDiv {
+    padding: 10px;
+  }
+
+  .newUser, .otpForm {
+    padding: 15px;
+  }
+
+  .newUser label, .otpForm label {
     font-size: 14px; /* Adjust font size for smaller screens */
-    padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  .newUser input, .otpForm input {
+    padding: 10px;
+    font-size: 14px;
+  }
+/* Error messages styling */
+
+
+  .btnclass {
+    font-size: 16px; /* Adjust button font size */
+    padding: 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .newUser {
-    max-width: 95%; /* Further adjust width for mobile screens */
-    padding: 10px; /* Further adjust padding for mobile screens */
+  .newUser, .otpForm {
+    padding: 10px;
   }
 
-  .newUser input[type="email"],
-  .newUser input[type="password"],
-  .newUser button {
-    font-size: 12px; /* Further adjust font size for mobile screens */
-    padding: 6px; /* Further adjust padding for mobile screens */
+  .newUser label, .otpForm label {
+    font-size: 12px; /* Further adjust font size */
+  }
+
+  .newUser input, .otpForm input {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .btnclass {
+    font-size: 14px; /* Further adjust button font size */
+    padding: 8px;
   }
 }
-

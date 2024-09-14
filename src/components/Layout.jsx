@@ -11,6 +11,9 @@ function Layout({ children }) {
     switch (location.pathname) {
       case "/dashboard":
         return <UserDashboardHeader />;
+      case "/proctordashboard":
+        return <UserDashboardHeader />;
+
       default:
         return <Header />;
     }

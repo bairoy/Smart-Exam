@@ -5,6 +5,9 @@ import NewUser from "./components/NewUser.jsx";
 import Home from "./components/Home.jsx";
 import UserDashboard from "./components/UserDashboard.jsx";
 import Login from "./components/Login.jsx";
+import NewExaminer from "./components/NewExaminer.jsx";
+import RoleLayout from "./components/RoleLayout.jsx";
+import ProctorDashboard from "./components/ProctorDashboard.jsx";
 
 function App() {
   return (
@@ -12,9 +15,12 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<NewUser />} />
+          <Route path="/rolelayout" element={<RoleLayout />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<UserDashboard />} />
+          <Route path="/signup" element={<NewUser />} />
+          <Route path="/signupexaminer" element={<NewExaminer />} />
+          <Route path="/proctordashboard" element={<ProctorDashboard />} />
         </Routes>
       </Layout>
     </Router>

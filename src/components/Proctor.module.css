@@ -1,0 +1,63 @@
+/* ProctorDashboard.module.css */
+
+/* Container for the entire dashboard */
+.dashboardContainer {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+}
+
+/* Title styling */
+.dashboardContainer h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Styling for paragraphs */
+.dashboardContainer p {
+  font-size: 1.125rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Table styling */
+.tableContainer {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+}
+
+.tableContainer th,
+.tableContainer td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.tableContainer th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.tableContainer tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tableContainer tr:hover {
+  background-color: #ddd;
+}
+
+/* Loader styling */
+.loader {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.loader p {
+  font-size: 1.25rem;
+  color: #007bff;
+}

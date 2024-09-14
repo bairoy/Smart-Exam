@@ -1,28 +1,28 @@
-import React, { useState } from "react";
-import style from "./NewUser.module.css"; // Import the CSS module
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+import styles from "./NewExaminer.module.css"; // Import the CSS module
 
-function NewUser() {
+function NewExaminer() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
+    employee_id: "",
     name: "",
     email: "",
     phone: "",
     password: "",
     confirmPassword: "",
-    classnumber: "",
     school: "",
   });
   const [otpInput, setOtpInput] = useState("");
   const [isOtpSent, setIsOtpSent] = useState(false);
-  const [error, setError] = useState(""); // State for error messages
-  const [successMessage, setSuccessMessage] = useState(""); // State for success messages
+  const [error, setError] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    setError(""); // Clear error message on input change
+    setError("");
   };
 
   const handleSubmit = async (e) => {
@@ -54,19 +54,19 @@ function NewUser() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/verify-otp",
+        "http://localhost:3000/api/proctorverify-otp",
         {
           email: formData.email,
           otp: otpInput,
           name: formData.name,
           phone: formData.phone,
           password: formData.password,
-          classnumber: formData.classnumber,
+          employee_id: formData.employee_id,
           school: formData.school,
         }
       );
       if (response.data.success) {
-        navigate("/dashboard");
+        navigate("/proctordashboard");
       } else {
         setError(
           "OTP verification failed. Please check your OTP and try again."
@@ -81,8 +81,16 @@ function NewUser() {
   };
 
   return (
-    <div className={style.outsideDiv}>
-      <form className={style.newUser} onSubmit={handleSubmit}>
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="employee_id">Employee ID:</label>
+        <input
+          type="text"
+          id="employee_id"
+          name="employee_id"
+          value={formData.employee_id}
+          onChange={handleChange}
+        />
         <label htmlFor="name">Name:</label>
         <input
           type="text"
@@ -90,9 +98,7 @@ function NewUser() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          required
         />
-
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -100,37 +106,15 @@ function NewUser() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          required
         />
-
         <label htmlFor="phone">Phone:</label>
         <input
-          type="tel"
+          type="text"
           id="phone"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
-          required
         />
-
-        <label htmlFor="classnumber">Class Number:</label>
-        <input
-          type="text"
-          id="classnumber"
-          name="classnumber"
-          value={formData.classnumber}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="school">School (write in short form):</label>
-        <input
-          type="text"
-          id="school"
-          name="school"
-          value={formData.school}
-          onChange={handleChange}
-        />
-
         <label htmlFor="password">Password:</label>
         <input
           type="password"
@@ -138,9 +122,7 @@ function NewUser() {
           name="password"
           value={formData.password}
           onChange={handleChange}
-          required
         />
-
         <label htmlFor="confirmPassword">Confirm Password:</label>
         <input
           type="password"
@@ -148,19 +130,19 @@ function NewUser() {
           name="confirmPassword"
           value={formData.confirmPassword}
           onChange={handleChange}
-          required
         />
-
-        <button type="submit" className={style.btnclass}>
-          Send OTP
-        </button>
-
-        {error && <p className={style.error}>{error}</p>}
-        {successMessage && <p className={style.success}>{successMessage}</p>}
+        <label htmlFor="school">School:</label>
+        <input
+          type="text"
+          id="school"
+          name="school"
+          value={formData.school}
+          onChange={handleChange}
+        />
+        <button type="submit">{isOtpSent ? "Verify OTP" : "Send OTP"}</button>
       </form>
-
       {isOtpSent && (
-        <form onSubmit={handleOtpSubmit} className={style.otpForm}>
+        <form onSubmit={handleOtpSubmit}>
           <label htmlFor="otp">Enter OTP:</label>
           <input
             type="text"
@@ -170,15 +152,14 @@ function NewUser() {
             onChange={(e) => setOtpInput(e.target.value)}
             required
           />
-          <button type="submit" className={style.btnclass}>
-            Verify OTP
-          </button>
+          <button type="submit">Verify OTP</button>
 
-          {error && <p className={style.error}>{error}</p>}
+          {error && <p className={styles.error}>{error}</p>}
+          {successMessage && <p className={styles.success}>{successMessage}</p>}
         </form>
       )}
     </div>
   );
 }
 
-export default NewUser;
+export default NewExaminer;
