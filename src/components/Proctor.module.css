@@ -1,63 +1,77 @@
-/* ProctorDashboard.module.css */
-
 /* Container for the entire dashboard */
 .dashboardContainer {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #f8f9fa;
-}
-
-/* Title styling */
-.dashboardContainer h1 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-/* Styling for paragraphs */
-.dashboardContainer p {
-  font-size: 1.125rem;
-  color: #666;
-  margin-bottom: 15px;
-}
-
-/* Table styling */
-.tableContainer {
-  margin-top: 20px;
-  border-collapse: collapse;
-  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   background-color: #fff;
-}
-
-.tableContainer th,
-.tableContainer td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-.tableContainer th {
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
-}
-
-.tableContainer tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-.tableContainer tr:hover {
-  background-color: #ddd;
 }
 
 /* Loader styling */
 .loader {
   text-align: center;
-  margin-top: 50px;
+  font-size: 1.5em;
+  color: #007bff;
+  margin-top: 20px;
 }
 
-.loader p {
-  font-size: 1.25rem;
-  color: #007bff;
+/* Error message styling */
+.error {
+  color: red;
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+/* Table container styling */
+.tableContainer {
+  margin-top: 20px;
+}
+
+/* Add Exam button styling */
+.addExamButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 24px;
+  font-size: 1.1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Add Exam button hover effect */
+.addExamButton:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .dashboardContainer {
+    padding: 15px;
+  }
+
+  .addExamButton {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboardContainer {
+    padding: 10px;
+  }
+
+  .addExamButton {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    bottom: 10px;
+    right: 10px;
+  }
 }

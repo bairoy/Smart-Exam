@@ -8,6 +8,7 @@ import Login from "./components/Login.jsx";
 import NewExaminer from "./components/NewExaminer.jsx";
 import RoleLayout from "./components/RoleLayout.jsx";
 import ProctorDashboard from "./components/ProctorDashboard.jsx";
+import AddExam from "./components/AddExam.jsx";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/signup" element={<NewUser />} />
           <Route path="/signupexaminer" element={<NewExaminer />} />
           <Route path="/proctordashboard" element={<ProctorDashboard />} />
+          <Route path="/addexam" element={<AddExam />} />
         </Routes>
       </Layout>
     </Router>
